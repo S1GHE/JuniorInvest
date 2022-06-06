@@ -1,0 +1,44 @@
+{% extends 'main_pagebase.html' %}
+{% block body %}
+    {{ super() }}
+<div class="container px-4 py-5" id="hanging-icons">
+    <h2 class="pb-2 border-bottom">{{ us.FIRST_NAME }} {{ us.LAST_NAME }}</h2>
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+      <div class="col d-flex align-items-start">
+        <div class="icon-square bg-light text-dark d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+        </div>
+        <div>
+          <h2>Ваши баллы</h2>
+            <p>Количество баллов JC📀 - {{ us.JC }}</p>
+            <a href="#" class="btn btn-primary">
+            Потратить
+           </a>
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+        <div class="icon-square bg-light text-dark d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+        </div>
+        <div>
+          <h2>Создать проект</h2>
+          <p>Вы перейдете на форму, в которой можете подробно рассказать о своем проекте</p>
+          <a href="/creat_project" class="btn btn-primary">
+            Создать
+          </a>
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+        <div class="icon-square bg-light text-dark d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+        </div>
+        <div>
+          <h2>Выйти из аккаунта</h2>
+          <p>Нажимая на данную кнопку, вы выйдите из аккаунта </p>
+          <a href="/logout" class="btn btn-primary">
+            Выйти
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+    </div>
+    </div>
+{% endblock %}

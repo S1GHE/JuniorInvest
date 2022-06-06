@@ -1,0 +1,32 @@
+{% extends 'main_pagebase.html' %}
+{% block body %}
+    {{ super() }}
+    <div class="text-center">
+        <div class="col-lg-6 mx-auto">
+            <h1>Проекты участников</h1>
+            <p>Здесь вы можете познакомиться с проектами участников социальной сети "JuniorInvest"</p>
+        </div>
+      </div>
+    <div class="container text-center my-5">
+        <img src="/static/images/viewProject.svg" class="bi me-2 responsive">
+    </div>
+    {% for p in project %}
+        <div class="container">
+            <div class="card">
+                <div class="card-header">
+                    <strong>Категория проекта:</strong> {{ p.CATEGORY_PROJECT }}
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">{{ p.NAME_PROJECT }}</h5>
+                    <p class="card-text">{{ p.DESCRIPTION[:300] }} <a href="{{url_for('showProject', id_post=p.ID)}}">...</a></p>
+                    <a href="{{url_for('showProject', id_post=p.ID)}}" class="btn btn-primary">Посмотреть</a>
+                </div>
+                <div class="card-footer text-muted">
+                    <strong>Автор проекта:</strong> Имя - {{ p.AUTHOR_FIRST_NAME }} Фамилия - {{ p.AUTHOR_LAST_NAME }} Псевдоним - {{ p.AUTHOR_USER_NAME }}
+                </div>
+            </div>
+        </div>
+        <br>
+    {% endfor %}
+
+{% endblock %}

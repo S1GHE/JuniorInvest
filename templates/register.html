@@ -1,0 +1,70 @@
+{% extends 'main_pagebase.html' %}
+{% block body %}
+    {{ super() }}
+    <div class="container">
+    {% for cat, msg in get_flashed_messages(True) %}
+        <div class="alert alert-{{ cat }} alert-dismissible fade show" role="alert">
+          {{ msg }}
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    {% endfor %}
+    <div class="text-center">
+        <div class="col-lg-6 mx-auto">
+            <h1>Регистрация</h1>
+            <p>Для того, чтобы создавать проекты на "JuniorInvest", вам нужно зарегистрироваться</p>
+        </div>
+      </div>
+    </div>
+        <div class="container text-center">
+        <img src="/static/images/register.svg" class="bi me-2 responsive">
+    </div>
+    <div class="container">
+        <div>
+                  <form class="form-inline" method="post" action="/register">
+                      <div class="row g-3">
+                        <div class="col-sm-6">
+                          <label for="firstName" class="form-label">Имя</label>
+                          <input type="text" class="form-control" id="firstName" placeholder="" value="" required="" name="firstName">
+                        </div>
+
+                        <div class="col-sm-6">
+                          <label for="lastName" class="form-label">Фамилия</label>
+                          <input type="text" class="form-control" id="lastName" placeholder="" value="" required="" name="lastName">
+                        </div>
+
+                          <div class="col-sm-6">
+                          <label for="number" class="form-label">Номер телефона</label>
+                          <input type="text" class="form-control" id="number" placeholder="" value="" required="" name="number">
+                        </div>
+
+                        <div class="col-sm-6">
+                            <label for="username" class="form-label">Имя пользователя</label>
+                            <div class="input-group has-validation">
+                                <span class="input-group-text">@</span>
+                                <input type="text" class="form-control" id="username" placeholder="Username" required="" name="username">
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                          <label for="email" class="form-label">Почта</label>
+                          <input type="email" class="form-control" id="email" placeholder="you@example.com" name="email">
+                        </div>
+
+                        <div class="col-12">
+                          <label for="subject" class="form-label">Пароль</label>
+                          <input type="password" class="form-control" id="email" placeholder="" name="psw">
+                        </div>
+
+                        <div class="col-12">
+                          <label for="subject" class="form-label">Повторите пароль</label>
+                          <input type="password" class="form-control" id="email" placeholder="" name="psw2">
+                        </div>
+
+                      </div>
+                      <hr class="my-4">
+                      <button class="w-100 btn btn-primary btn-lg" type="submit">Зарегистрироваться</button>
+                  </form>
+              </div>
+    </div>
+
+{% endblock %}

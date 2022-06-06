@@ -1,0 +1,12 @@
+{% extends 'main_pagebase.html' %}
+{% block body %}
+    {{ super() }}
+    <div class="container">
+        <h1>Данная страница не доступна :(</h1>
+        <p>Вы можете вернуться на <a href="/main_page">главную</a> страницу</p>
+    </div>
+    <div class="container text-center">
+        <img src="/static/images/404.svg" class="bi me-2 responsive">
+    </div>
+
+{% endblock %}

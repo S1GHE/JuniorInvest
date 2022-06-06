@@ -1,0 +1,27 @@
+{% extends 'admin_base.html' %}
+{% block body %}
+    {{ super() }}
+    <div class="container">
+            <div class="container" id="featured-3">
+            <h2 class="pb-2 border-bottom">Обратная связь</h2>
+                {% for m in feedback %}
+                    <div class="col">
+                    <div class="card">
+                      <div class="card-header">
+                        {{ m.FIRST_NAME }} {{ m.LAST_NAME }}
+                      </div>
+                      <div class="card-body">
+                        <h5 class="card-title">{{ m.SUBJECT }}</h5>
+                        <p class="card-text">{{ m.MESSAGE }}</p>
+                        <a href="#" class="btn btn-primary">Заявка обработана</a>
+                      </div>
+                      <div class="card-footer text-muted">
+                          Номер: {{ m.TELEPHONE_NUMBER }} Почта: {{ m. EMAIL_ADDRESS }} Адрес: {{ m.ADDRESS }}
+                      </div>
+                    </div>
+                  </div>
+                    <br>
+                {% endfor %}
+          </div>
+    </div>
+{% endblock %}

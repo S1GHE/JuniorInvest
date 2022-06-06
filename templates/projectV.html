@@ -1,0 +1,59 @@
+{% extends 'main_pagebase.html' %}
+{% block body %}
+    {{ super() }}
+    <div class="container">
+        <div class="p-5 mb-4 bg-light ">
+            <div class="container-fluid py-5">
+                <h1 class="display-5 fw-bold">{{ project.NAME_PROJECT }}</h1>
+                <p class="col-md-8 fs-4">Категория проекта: {{ project.CATEGORY_PROJECT }}</p>
+            </div>
+            <div class="row align-items-md-stretch">
+      <div class="col-md-12">
+        <div class="h-100 p-5 text-white bg-primary rounded-3">
+          <h2>О проекте</h2>
+          <p>{{ project.DESCRIPTION }}</p>
+        </div>
+      </div>
+      <div class="col-md-12 py-3 mb-4">
+        <div class="h-100 p-5 bg-light border rounded-3">
+            <h2>Автор</h2>
+            <p>Имя: {{ project.AUTHOR_FIRST_NAME }} Фамилия: {{ project.AUTHOR_LAST_NAME }} Никнейм: {{ project.AUTHOR_USER_NAME }} </p>
+        </div>
+      </div>
+    </div>
+        </div>
+    </div>
+{#    <div class="container">#}
+{##}
+{#    <div class="p-5 mb-4">#}
+{#      <div class="container-fluid py-5">#}
+{#          <div class="row">#}
+{#              <div class="col-md-4">#}
+{#                  <div>#}
+{#         <img src="/static/images/defProject.svg" class="img-thumbnail" width="500" height="500" role="img">#}
+{#        </div>#}
+{#              </div>#}
+{#              <div class="col-md-8">#}
+{#                    <h1>Название проекта: {{ project.NAME_PROJECT}}</h1>#}
+{#                    <p class="lead">#}
+{#                        <strong>Категория проекта:</strong> {{ project.CATEGORY_PROJECT }}#}
+{#                    </p>#}
+{#                  <h2>Автор проекта:</h2>#}
+{#                    <p class="lead">#}
+{#                        <strong>#}
+{#                            {{ project.AUTHOR_FIRST_NAME }} {{ project.AUTHOR_LAST_NAME }} {{ project.AUTHOR_USER_NAME }}#}
+{#                        </strong>#}
+{#                    </p>#}
+{#              </div>#}
+{#                            </div>#}
+{#              <div class="col-12">#}
+{#                    <h2>Описание проекта:</h2>#}
+{#                    <p class="lead">#}
+{#                      {{ project.DESCRIPTION }}#}
+{#                    </p>#}
+{#              </div>#}
+{#          </div>#}
+{#      </div>#}
+{#    </div>#}
+
+{% endblock %}

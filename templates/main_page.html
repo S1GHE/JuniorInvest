@@ -1,0 +1,81 @@
+{% extends 'main_pagebase.html' %}
+{% block body %}
+    {{ super() }}
+    <div class="container text-center">
+        <img src="/static/images/junior invest.svg" class="bi me-2 responsive">
+    </div>
+    <div class="px-4 pt-5 my-5 text-center">
+        <div class="col-lg-6 mx-auto">
+          <p class="lead mb-4">«JuniorInvest» — платформа поддержки проектов детей от 7 до 16 лет. Мы стремимся сделать так, чтобы каждый ребенок Татарстана проявил себя на нашем сайте, и создал свой проект!</p>
+          <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
+            <button type="button" class="btn btn-primary btn-lg px-4 me-sm-3" ><a href="/creat_project" class="nav-link">Создать проект</a></button>
+            <button type="button" class="btn btn-outline-secondary btn-lg px-4"><a href="/view_projects" class="nav-link">Смотреть проекты</a></button>
+          </div>
+        </div>
+      </div>
+    <div class="container">
+    {% for cat, msg in get_flashed_messages(True) %}
+        <div class="alert alert-{{ cat }} alert-dismissible fade show" role="alert">
+          {{ msg }}
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    {% endfor %}
+    <div class="p-5 mb-4 bg-light rounded-3">
+      <div class="container-fluid py-5">
+          <div class="row">
+              <div class="col-md-4">
+                  <h1 class="text-center">Связаться с нами</h1>
+                  <br>
+                  <br>
+                  <p class="text-center">Наша почта - info@juniorinvest.ru
+                  <p class="text-center">Контактная информация: 8(919) 26 12-18</p>
+              </div>
+              <div class="col-md-8">
+                  <form class="form-inline" method="post" action="/main_page">
+                      <div class="row g-3">
+                        <div class="col-sm-6">
+                          <label for="firstName" class="form-label">Имя</label>
+                          <input type="text" class="form-control" id="firstName" placeholder="" value="" required="" name="firstName">
+                        </div>
+
+                        <div class="col-sm-6">
+                          <label for="lastName" class="form-label">Фамилия</label>
+                          <input type="text" class="form-control" id="lastName" placeholder="" value="" required="" name="lastName">
+                        </div>
+
+                          <div class="col-sm-6">
+                          <label for="number" class="form-label">Номер телефона</label>
+                          <input type="text" class="form-control" id="number" placeholder="" value="" required="" name="number">
+                        </div>
+
+                        <div class="col-sm-6">
+                          <label for="address" class="form-label">Адрес</label>
+                          <input type="text" class="form-control" id="lastName" placeholder="" value="" required="" name="address">
+                        </div>
+
+                        <div class="col-12">
+                          <label for="email" class="form-label">Почта</label>
+                          <input type="email" class="form-control" id="email" placeholder="you@example.com" name="email">
+                        </div>
+
+                        <div class="col-12">
+                          <label for="subject" class="form-label">Тема</label>
+                          <input type="text" class="form-control" id="email" placeholder="" name="subject">
+                        </div>
+
+                        <div class="col-12">
+                          <label for="message" class="form-label">Сообщение</label>
+                          <textarea class="form-control" id="message" placeholder="" name="message"></textarea>
+                        </div>
+
+                      </div>
+                      <hr class="my-4">
+                      <button class="w-100 btn btn-primary btn-lg" type="submit">Отправить</button>
+                  </form>
+              </div>
+          </div>
+      </div>
+    </div>
+    </div>
+
+{% endblock %}
